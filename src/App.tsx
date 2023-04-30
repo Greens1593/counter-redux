@@ -1,13 +1,17 @@
+import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "./store";
 import { actions } from "./store";
+
+import "./index.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
-import "./index.css";
 
-function App() {
-  const counter = useSelector((state) => state.counter);
+
+export function App() {
+  const counter = useSelector((state: RootState) => state.counter);
   const dispatch = useDispatch();
   const increment = () => {
     dispatch(actions.increment());
@@ -60,4 +64,3 @@ function App() {
   );
 }
 
-export default App;
